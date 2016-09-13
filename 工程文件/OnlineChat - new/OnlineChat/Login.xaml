@@ -1,0 +1,44 @@
+﻿<controls:MetroWindow x:Class="OnlineChat.Login"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:OnlineChat"
+        mc:Ignorable="d"
+        xmlns:controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+        Title="~Chat~" Height="350" Width="600" FontFamily="MF YiHei (Noncommercial) Regular" TitleForeground="White" TitlebarHeight="40" FontSize="20"
+        ResizeMode="CanMinimize"
+        WindowStartupLocation="CenterScreen"   
+        EnableDWMDropShadow="True" TitleCaps="False" Closing="MetroWindow_Closing" Icon="bin/Debug/Resources/img/logo1.ico">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="65*"/>
+            <RowDefinition Height="42*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="0*"/>
+            <ColumnDefinition Width="0*"/>
+        </Grid.ColumnDefinitions>
+
+        <MediaElement x:Name="element" LoadedBehavior="Play"
+                      Source = "Resources/1.gif"
+                      MediaEnded="MediaElement_MediaEnded" Stretch="Fill" Margin="0,-42,0,-87" Grid.RowSpan="2" Grid.ColumnSpan="2" SpeedRatio="1" />
+        <Label x:Name="label" HorizontalAlignment="Left" Height="287" Margin="160,34,0,0" Grid.RowSpan="2" VerticalAlignment="Top" Width="277" Background="#FF323232" Grid.ColumnSpan="2"/>
+        <Button x:Name="login" Content="" HorizontalAlignment="Left" Margin="252,0,0,0" VerticalAlignment="Top" Width="91" Height="91" Click="login_Click" Grid.ColumnSpan="2" BorderBrush="White" BorderThickness="3" Grid.Row="1" IsDefault="True" Cursor="Hand"/>
+        <controls:ProgressRing x:Name="progressring" IsActive="True" Margin="266,188,268,27" HorizontalContentAlignment="Center" Height="106" Foreground="#FFFB314C" Grid.ColumnSpan="2" Grid.RowSpan="2" />
+        <TextBox x:Name="username" controls:TextBoxHelper.ClearTextButton="True" Grid.ColumnSpan="2" Margin="197,63,195,89" HorizontalAlignment="Center" IsHitTestVisible="True" MaxLines="1" MinWidth="150" MaxWidth="250" Text="2013011551" FontSize="20" Width="202" VerticalScrollBarVisibility="Disabled" BorderBrush="White" BorderThickness="2"/>
+        <TextBox x:Name="password" controls:TextBoxHelper.ClearTextButton="True" Margin="197,130,195,22" HorizontalAlignment="Center" IsHitTestVisible="True" MaxLines="1" MinWidth="150" MaxWidth="250" Text="net2015" FontSize="20" Grid.ColumnSpan="2" Width="202" VerticalScrollBarVisibility="Disabled" BorderBrush="White" BorderThickness="2" >
+            <TextBox.CacheMode>
+                <BitmapCache/>
+            </TextBox.CacheMode>
+        </TextBox>
+    </Grid>
+
+    <controls:MetroWindow.RightWindowCommands>
+        <controls:WindowCommands FontFamily="Myriad Pro" FontSize="20">
+            <Button x:Name="settings" Content="settings  " Click="settings_Click"/>
+        </controls:WindowCommands>
+    </controls:MetroWindow.RightWindowCommands>
+</controls:MetroWindow>

@@ -1,0 +1,248 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="OnlineChat.App" Collapsed="true">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>App.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="OnlineChat.ChatBox" BaseTypeListCollapsed="true">
+    <Position X="18.5" Y="1.25" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAgAEABCQAAAAAACAAAAAAAQEBQAAAAhAgAAAABCI=</HashCode>
+      <FileName>ChatBox.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="OnlineChat.ChatListen">
+    <Position X="11.5" Y="1.25" Width="1.5" />
+    <NestedTypes>
+      <Delegate Name="OnlineChat.ChatListen.ChatMessage" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>ChatListen.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Delegate>
+      <Class Name="OnlineChat.ChatListen.Client" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>ChatListen.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Class>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AEAAAAAAAAAAAAEAAAAAAAAACIAAEBAAAACQAAAAAIc=</HashCode>
+      <FileName>ChatListen.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="OnlineChat.ChatListenEventArgs" Collapsed="true">
+    <Position X="5.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAYAAAAAAAAAAAAAAAgAAAABAAAAAAAiAAAAACA=</HashCode>
+      <FileName>ChatListen.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="OnlineChat.ChatMessage" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="7.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAEAAAAAAAAAAAAAAAAAgAAAAAAAAAAAA=</HashCode>
+      <FileName>ChatMessage.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="OnlineChat.ChatSend">
+    <Position X="11.5" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEAAAAAAAAAAgAUAACAIAAEAKAAIAAAAAAAAAAAAAAQ=</HashCode>
+      <FileName>ChatSend.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="OnlineChat.Friends" Collapsed="true">
+    <Position X="2.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAAAAAAAAAAAgAAAAAAAAAQAIAAAAAAAAAAABAAAAAA=</HashCode>
+      <FileName>ClassDefine.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="OnlineChat.MyColor" Collapsed="true">
+    <Position X="4" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAgBAAAAAAAAAAAAAAABAAAAAQAAAAEAAAAAAA=</HashCode>
+      <FileName>ClassDefine.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="OnlineChat.ClassDefine" Collapsed="true">
+    <Position X="0.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ClassDefine.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="OnlineChat.Emoji" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="2.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAACAAACAAAAAA=</HashCode>
+      <FileName>Emoji.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="OnlineChat.EmojiBox" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="4" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAIAgAAAAAAAAAAAAAAAAAAACAAAAAAAAA=</HashCode>
+      <FileName>EmojiBox.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="OnlineChat.FileProgress" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="5.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>FileProgress.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="OnlineChat.FileRecv">
+    <Position X="9.75" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAgAAACAJAAFAgAAAAAAACAAAABACABBAAAAABAw=</HashCode>
+      <FileName>FileRecv.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="OnlineChat.FileSend">
+    <Position X="8" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAgAAAAABYAkAAAAAABAACAAAAAAAABBAAABEAAA=</HashCode>
+      <FileName>FileSend.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="OnlineChat.FriendList">
+    <Position X="5.75" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAIAAAIAAQEDAAAAAAgAAAAAACAAAABAAAAAAQ=</HashCode>
+      <FileName>FriendList.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="OnlineChat.Function" Collapsed="true">
+    <Position X="4" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAgAAAAAAAAAAAAAQAAAIAAAAgQgAAA=</HashCode>
+      <FileName>Function.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="OnlineChat.ImageDisplay" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="5.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAwAQAAAAAAQAQAAAAgAAAAAAAAAAACQACAAAABA=</HashCode>
+      <FileName>ImageDisplay.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="OnlineChat.Login" BaseTypeListCollapsed="true">
+    <Position X="13.5" Y="1.25" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAREAgAAA4AAAAQACAABAAAFAAAAAAJEAAAAAAAAAIA=</HashCode>
+      <FileName>Login.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="OnlineChat.Main" BaseTypeListCollapsed="true">
+    <Position X="16.25" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AARBAQQCCAAQwAEAAQBAgJCGImAQAQUQARAAYAAggCQ=</HashCode>
+      <FileName>Main.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="OnlineChat.Message" Collapsed="true">
+    <Position X="0.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Message.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="OnlineChat.MessageWindow" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="2.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AARAAAAAAAAAAAAAAgBEAIQAEAAAAABAACAAAAgAAAA=</HashCode>
+      <FileName>MessageWindow.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="OnlineChat.ToServer">
+    <Position X="0.5" Y="4.5" Width="1.5" />
+    <NestedTypes>
+      <Delegate Name="OnlineChat.ToServer.ServerMessage" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>ToServer.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Delegate>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AAAAAAEABKAAIAEAAAAAAAIAKAAIAAgAAAAQAAAAAIA=</HashCode>
+      <FileName>ToServer.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="OnlineChat.ServerEventArgs" Collapsed="true">
+    <Position X="7.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAACA=</HashCode>
+      <FileName>ToServer.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="OnlineChat.UserInfo" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="4" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAEAAAAAAAAAAAEAAIAAAAAAQIAAAAAAAAAAAgAAUQ=</HashCode>
+      <FileName>UserInfo.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="OnlineChat.UserClickEventArgs" Collapsed="true">
+    <Position X="2.25" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAgAAAA=</HashCode>
+      <FileName>UserInfo.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="OnlineChat.Properties.Resources" Collapsed="true">
+    <Position X="5.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIACAAE+gUIAAKC/4H9UAgAwSMEAAgQBPgAqAAAAKQ=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="OnlineChat.Properties.Settings" Collapsed="true">
+    <Position X="9.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAIAAAAAABAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Enum Name="OnlineChat.MessageResult" Collapsed="true">
+    <Position X="4" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAQAAAAAAAAAAAAACAAAAAAAAAAAAEAAAA=</HashCode>
+      <FileName>ClassDefine.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="OnlineChat.MessageFunction" Collapsed="true">
+    <Position X="2.25" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAEAAAAAAAAAAAAAIAAAACAABABAAAAA=</HashCode>
+      <FileName>ClassDefine.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="OnlineChat.ServerMessageType" Collapsed="true">
+    <Position X="5.75" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAEAAABAAAAEAAAAAAAAAAAAIAAAAAAQAAAQAAAAAA=</HashCode>
+      <FileName>ClassDefine.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="OnlineChat.ChatMessageType" Collapsed="true">
+    <Position X="0.5" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAIBAAAAAAIAAgAIAAAAAAAAAAAAABAAQCAAAAA=</HashCode>
+      <FileName>ClassDefine.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Microsoft YaHei UI" Size="9" />
+</ClassDiagram>

@@ -1,0 +1,759 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{B42B019A-58F2-46EC-B54A-AB6C2104AA48}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>OnlineChat</RootNamespace>
+    <AssemblyName>OnlineChat</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>SecurityRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>
+    </ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AForge, Version=2.2.5.0, Culture=neutral, PublicKeyToken=c1db6ff4eaa06aeb, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\AForge.dll</HintPath>
+    </Reference>
+    <Reference Include="AForge.Controls, Version=2.2.5.0, Culture=neutral, PublicKeyToken=a8ac264d1dc6b9d9, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\AForge.Controls.dll</HintPath>
+    </Reference>
+    <Reference Include="AForge.Imaging, Version=2.2.5.0, Culture=neutral, PublicKeyToken=ba8ddea9676ca48b, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\AForge.Imaging.dll</HintPath>
+    </Reference>
+    <Reference Include="AForge.Video, Version=2.2.5.0, Culture=neutral, PublicKeyToken=cbfb6e07d173c401, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\AForge.Video.dll</HintPath>
+    </Reference>
+    <Reference Include="AForge.Video.DirectShow, Version=2.2.5.0, Culture=neutral, PublicKeyToken=61ea4348d43881b7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\AForge.Video.DirectShow.dll</HintPath>
+    </Reference>
+    <Reference Include="MahApps.Metro, Version=1.1.2.0, Culture=neutral, PublicKeyToken=f4fb5a3c4d1e5b4f, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\MahApps.Metro.1.1.2.0\lib\net45\MahApps.Metro.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Windows.Interactivity, Version=4.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\MahApps.Metro.1.1.2.0\lib\net45\System.Windows.Interactivity.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="WindowsFormsIntegration" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="ChatMessage.xaml.cs">
+      <DependentUpon>ChatMessage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ChatSend.cs" />
+    <Compile Include="ChatBox.xaml.cs">
+      <DependentUpon>ChatBox.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ChatListen.cs" />
+    <Compile Include="ClassDefine.cs" />
+    <Compile Include="Emoji.xaml.cs">
+      <DependentUpon>Emoji.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="EmojiBox.xaml.cs">
+      <DependentUpon>EmojiBox.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="FileProgress.xaml.cs">
+      <DependentUpon>FileProgress.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="FileRecv.cs" />
+    <Compile Include="FileSend.cs" />
+    <Compile Include="FriendList.cs" />
+    <Compile Include="Function.cs" />
+    <Compile Include="ImageDisplay.xaml.cs">
+      <DependentUpon>ImageDisplay.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ToServer.cs" />
+    <Compile Include="UserInfo.xaml.cs">
+      <DependentUpon>UserInfo.xaml</DependentUpon>
+    </Compile>
+    <Page Include="ChatBox.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ChatMessage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Emoji.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="EmojiBox.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="FileProgress.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ImageDisplay.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Login.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Login.xaml.cs">
+      <DependentUpon>Login.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="Main.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MessageWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserInfo.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Main.xaml.cs">
+      <DependentUpon>Main.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Message.cs" />
+    <Compile Include="MessageWindow.xaml.cs">
+      <DependentUpon>MessageWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <None Include="bin\Debug\OnlineChat.exe.config" />
+    <None Include="bin\Debug\OnlineChat.vshost.exe.config" />
+    <None Include="bin\Debug\OnlineChat.vshost.exe.manifest" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E00E.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E056.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E057.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E058.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E059.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E105.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E106.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E107.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E108.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E11B.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E401.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E402.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E403.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E404.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E405.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E406.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E407.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E408.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E409.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E40A.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E40B.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E40C.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E40D.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E40E.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E40F.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E410.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E411.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E412.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E413.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E414.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E415.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E416.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E417.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E418.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E419.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E420.png" />
+    <None Include="bin\Release\OnlineChat.exe.config" />
+    <None Include="bin\Release\OnlineChat.vshost.exe.config" />
+    <None Include="bin\Release\OnlineChat.vshost.exe.manifest" />
+    <None Include="ClassDiagram1.cd" />
+    <None Include="ClassDiagram2.cd" />
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <AppDesigner Include="Properties\" />
+    <Resource Include="bin\Debug\MahApps.Metro.xml" />
+    <Resource Include="bin\Debug\Resources\1.gif" />
+    <Resource Include="bin\Debug\Resources\check.png" />
+    <Resource Include="bin\Debug\Resources\img\logo.png" />
+    <Resource Include="bin\Debug\Resources\img\logo1.ico" />
+    <Resource Include="bin\Release\MahApps.Metro.xml" />
+    <Resource Include="bin\Release\Resources\1.gif" />
+    <Resource Include="bin\Release\Resources\check.png" />
+    <Resource Include="bin\Release\Resources\img\logo.png" />
+    <Resource Include="bin\Release\Resources\img\logo1.ico" />
+    <Resource Include="Resources\1.gif" />
+    <Resource Include="Resources\Add.png" />
+    <Resource Include="Resources\bg.jpg" />
+    <Resource Include="Resources\Chat.png" />
+    <Resource Include="Resources\check.png" />
+    <Resource Include="Resources\close.png" />
+    <Resource Include="Resources\header1.png" />
+    <Resource Include="Resources\header1_big.png" />
+    <Resource Include="Resources\header2.png" />
+    <Resource Include="Resources\header2_big.png" />
+    <Resource Include="Resources\header3.png" />
+    <Resource Include="Resources\header3_big.png" />
+    <Resource Include="Resources\header4.png" />
+    <Resource Include="Resources\header4_big.png" />
+    <Resource Include="Resources\header5.png" />
+    <Resource Include="Resources\header5_big.png" />
+    <Resource Include="Resources\header6.png" />
+    <Resource Include="Resources\header6_big.png" />
+    <Resource Include="Resources\header7.png" />
+    <Resource Include="Resources\header7_big.png" />
+    <Resource Include="Resources\logo.png" />
+    <Resource Include="Resources\myself.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pic.png" />
+    <None Include="Resources\pic1.png" />
+    <None Include="Resources\file.png" />
+    <None Include="Resources\emotion.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logo32.ico" />
+    <None Include="Resources\logo16.ico" />
+    <None Include="Resources\logo1.ico" />
+    <None Include="Resources\cut.png" />
+    <None Include="Resources\video.png" />
+    <None Include="Resources\welcomeimage.png" />
+    <None Include="Resources\welcomelogo.png" />
+    <None Include="Resources\shake.png" />
+    <Content Include="bin\Debug\MahApps.Metro.dll" />
+    <Content Include="bin\Debug\OnlineChat.vshost.exe" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E001.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E002.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E003.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E004.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E005.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E006.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E007.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E008.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E009.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E00A.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E00B.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E00C.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E00D.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E00F.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E010.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E011.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E012.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E013.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E014.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E015.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E016.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E017.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E018.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E019.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E01A.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E01B.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E01C.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E01D.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E01E.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E01F.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E020.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E021.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E022.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E023.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E024.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E025.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E026.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E027.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E028.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E029.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E02A.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E02B.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E02C.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E02D.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E02E.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E02F.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E030.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E031.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E032.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E033.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E034.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E035.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E036.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E037.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E038.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E039.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E03A.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E03B.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E03C.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E03D.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E03E.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E03F.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E040.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E041.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E042.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E043.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E044.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E045.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E046.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E047.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E048.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E049.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E04A.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E04B.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E04C.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E04D.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E04E.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E04F.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E050.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E051.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E052.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E053.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E054.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E055.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E05A.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E101.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E102.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E103.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E104.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E109.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E10A.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E10B.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E10C.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E10D.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E10E.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E10F.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E110.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E111.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E112.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E113.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E114.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E115.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E116.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E117.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E118.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E119.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E11A.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E11C.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E11D.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E11E.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E11F.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E120.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E121.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E122.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E123.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E124.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E125.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E126.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E127.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E128.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E129.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E12A.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E12B.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E12C.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E12D.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E12E.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E12F.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E130.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E131.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E132.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E133.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E134.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E135.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E136.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E137.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E138.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E139.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E13A.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E13B.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E13C.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E13D.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E13E.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E13F.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E140.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E141.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E142.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E143.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E144.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E145.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E146.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E147.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E148.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E149.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E14A.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E14B.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E14C.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E14D.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E14E.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E14F.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E150.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E151.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E152.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E153.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E154.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E155.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E156.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E157.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E158.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E159.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E15A.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E201.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E202.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E203.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E204.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E205.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E206.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E207.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E208.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E209.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E20A.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E20B.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E20C.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E20D.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E20E.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E20F.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E210.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E211.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E212.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E213.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E214.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E215.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E216.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E217.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E218.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E219.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E21A.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E21B.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E21C.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E21D.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E21E.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E21F.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E220.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E221.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E222.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E223.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E224.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E225.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E226.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E227.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E228.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E229.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E22A.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E22B.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E22C.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E22D.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E22E.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E22F.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E230.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E231.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E232.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E233.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E234.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E235.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E236.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E237.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E238.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E239.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E23A.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E23B.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E23C.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E23D.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E23E.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E23F.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E240.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E241.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E242.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E243.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E244.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E245.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E246.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E247.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E248.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E249.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E24A.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E24B.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E24C.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E24D.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E24E.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E24F.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E250.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E251.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E252.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E253.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E301.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E302.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E303.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E304.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E305.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E306.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E307.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E308.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E309.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E30A.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E30B.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E30C.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E30D.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E30E.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E30F.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E310.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E311.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E312.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E313.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E314.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E315.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E316.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E317.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E318.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E319.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E31A.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E31B.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E31C.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E31D.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E31E.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E31F.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E320.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E321.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E322.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E323.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E324.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E325.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E326.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E327.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E328.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E329.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E32A.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E32B.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E32C.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E32D.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E32E.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E32F.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E330.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E331.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E332.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E333.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E334.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E335.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E336.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E337.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E338.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E339.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E33A.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E33B.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E33C.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E33D.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E33E.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E33F.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E340.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E341.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E342.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E343.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E344.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E345.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E346.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E347.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E348.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E349.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E34A.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E34B.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E34C.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E34D.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E41A.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E41B.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E41C.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E41D.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E41E.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E41F.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E421.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E422.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E423.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E424.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E425.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E426.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E427.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E428.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E429.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E42A.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E42B.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E42C.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E42D.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E42E.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E42F.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E430.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E431.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E432.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E433.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E434.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E435.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E436.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E437.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E438.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E439.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E43A.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E43B.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E43C.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E43D.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E43E.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E43F.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E440.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E441.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E442.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E443.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E444.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E445.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E446.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E447.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E448.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E449.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E44A.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E44B.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E44C.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E501.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E502.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E503.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E504.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E505.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E506.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E507.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E508.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E509.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E50A.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E50B.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E50C.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E50D.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E50E.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E50F.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E510.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E511.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E512.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E513.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E514.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E515.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E516.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E517.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E518.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E519.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E51A.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E51B.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E51C.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E51D.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E51E.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E51F.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E520.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E521.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E522.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E523.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E524.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E525.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E526.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E527.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E528.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E529.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E52A.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E52B.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E52C.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E52D.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E52E.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E52F.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E530.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E531.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E532.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E533.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E534.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E535.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E536.png" />
+    <Resource Include="bin\Debug\Resources\emoji\emoji-E537.png" />
+    <Content Include="bin\Debug\System.Windows.Interactivity.dll" />
+    <Content Include="bin\Release\MahApps.Metro.dll" />
+    <Content Include="bin\Release\OnlineChat.exe" />
+    <Content Include="bin\Release\OnlineChat.pdb" />
+    <Content Include="bin\Release\OnlineChat.vshost.exe" />
+    <Content Include="bin\Release\System.Windows.Interactivity.dll" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\RisCaptureLib\RisCaptureLib.csproj">
+      <Project>{de79c6ab-b5a9-4baf-80fa-22835452785f}</Project>
+      <Name>RisCaptureLib</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
